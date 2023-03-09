@@ -1,0 +1,376 @@
+{
+    "resourceType": "Composition",
+    "id": "17",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-03-08T07:34:09.508+00:00",
+        "source": "#GbddF70VygsdTyDt"
+    },
+    "language": "zh-TW",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\t    \n\t\t\t<table border=\"1\">\n\t\t\t\t<caption>門診病歷</caption>\n\t\t\t\t<tr><th>身分證字號</th><th>病歷號</th><th>病人姓名</th><th>性別</th><th>出生日期</th><th>文件列印日期</th><th>醫師姓名</th><th>醫師紀錄日期時間</th><th>醫院名稱</th><th>科別</th><th>門診日期</th></tr>\n\t\t\t\t<tr><td>Z123456789</td><td>123456</td><td>趙錢孫</td><td>男</td><td>1997-01-01</td><td>2010-09-04</td><td>賴一施 </td><td>2010-09-04</td><td>國立臺灣大學醫學院附設醫院</td><td>家醫科</td><td>2010-08-10</td></tr>\n\t\t\t</table>\n\t\t</div>"
+    },
+    "status": "preliminary",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "28579-1",
+                "display": "Visit note"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "https://fhirtest.uhn.ca//baseR4/Patient/129257",
+        "display": "趙錢孫"
+    },
+    "encounter": {
+        "reference": "https://fhirtest.uhn.ca/baseR4/Encounter/129814"
+    },
+    "date": "2010-09-04T15:06:00",
+    "author": [
+        {
+            "reference": "https://fhirtest.uhn.ca//baseR4/Practitioner/129288",
+            "display": "賴一施"
+        }
+    ],
+    "title": "門診病歷",
+    "confidentiality": "N",
+    "attester": [
+        {
+            "mode": "professional",
+            "time": "2010-09-04T12:00:00"
+        }
+    ],
+    "custodian": {
+        "reference": "https://fhirtest.uhn.ca/baseR4/Organization/129188",
+        "display": "國立臺灣大學醫學院附設醫院"
+    },
+    "section": [
+        {
+            "title": "實驗室檢查紀錄",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "19146-0",
+                        "display": "Reference lab test results"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>實驗室檢查紀錄:病人血型及D抗原性</b></tr>\n\t\t\t\t\t<tr>血型:B</tr>\n\t\t\t\t\t<tr>D抗原性:Rh+</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Observation/127858"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Observation/127859"
+                }
+            ]
+        },
+        {
+            "title": "重大傷病",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "11338-1",
+                        "display": "History of major illnesses and injuries"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>重大傷病</b></tr>\n\t\t\t\t\t<tr>再生不良性貧血</tr>\n\t\t\t\t\t<tr>過敏性血管炎</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Condition/127947"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Condition/127962"
+                }
+            ]
+        },
+        {
+            "title": "過敏史",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "10155-0",
+                        "display": "History of allergies, reported"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>過敏史</b></tr>\n\t\t\t\t\t<tr>無</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/AllergyIntolerance/127963"
+                }
+            ]
+        },
+        {
+            "title": "病人生活史",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "29762-2",
+                        "display": "Social history Narrative"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>病人生活史</b></tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "section": [
+                {
+                    "title": "就診年齡",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "29553-5",
+                                "display": "Age calculated"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "status": "generated",
+                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>就診年齡:30歲5個月</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</div>"
+                    }
+                },
+                {
+                    "title": "職業",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "21847-9",
+                                "display": "Usual occupation Narrative"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "status": "generated",
+                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>職業:服務業/一般職員</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</div>"
+                    }
+                },
+                {
+                    "title": "就醫身分別",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "63513-6",
+                                "display": "Are you covered by health insurance or some other kind of health care plan"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "status": "generated",
+                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>就醫身分別:健保</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</div>"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "診斷",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "29548-5",
+                        "display": "Diagnosis Narrative"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>診斷</b></tr>\n\t\t\t\t\t<tr>肺結核</tr>\n\t\t\t\t\t<tr>未確認流感病毒所致流行性感冒併明示類型肺炎</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Condition/130699"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Condition/130700"
+                }
+            ]
+        },
+        {
+            "title": "病情摘要",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "19824-2",
+                        "display": "Return visit conditions"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>主觀描述、客觀描述及評估</b></tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "section": [
+                {
+                    "title": "主觀描述",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "61150-9",
+                                "display": "Subjective Narrative"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "status": "generated",
+                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t<table>\t\t\t\t\t\n\t\t\t\t\t\t<tr>主觀描述</tr>\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>stable now and no complaint，report normal home BP；</tr>\n\t\t\t\t\t\t<tr>ever increased BP noted for weeks，no DOE，no chest pain，no syncope；</tr>\n\t\t\t\t\t\t<tr>no PND，no orthopnea</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</div>"
+                    }
+                },
+                {
+                    "title": "客觀描述",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "61149-1",
+                                "display": "Objective Narrative"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "status": "generated",
+                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t<table>\t\t\t\t\t\n\t\t\t\t\t\t<tr>客觀描述</tr>\n\t\t\t\t\t\t<tr>BP：148/70 mmHg，HR：66/min</tr>\n\t\t\t\t\t\t<tr>PE：pale conjunctiva-，icteric sclera-； JVE- ， carotid bruits-，goiter-；clear bs，no rales，no wheezing；RHB，soft SM，Peripheral pulses：++，pitting edema-</tr>\n\t\t\t\t\t\t<tr>Previous CXR：no cardiomegaly</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</div>"
+                    }
+                },
+                {
+                    "title": "評估",
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "51847-2",
+                                "display": "Evaluation +​ Plan note"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "status": "generated",
+                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t<table>\t\t\t\t\t\n\t\t\t\t\t\t<tr>評估</tr>\n\t\t\t\t\t\t<tr>HCVD</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</div>"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "處置項目",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "29554-3",
+                        "display": "Procedure Narrative"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t<table border=\"1\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>項次</td><td>處置代碼</td><td>處置名稱</td><td>頻率</td><td>數量</td><td>單位</td><td>部位</td><td>註記</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>1</td><td>19009C </td><td>腹部超音波，追蹤性</td><td>一次性處置</td><td>1</td><td>次</td><td>C上腹部</td><td>持續追蹤</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>2</td><td>08082C </td><td>全套血液檢查ⅢCBC-III</td><td>一次性處置</td><td>1</td><td>次</td><td>O 其他</td><td>NA</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Procedure/133781"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Procedure/133784"
+                }
+            ]
+        },
+        {
+            "title": "處方內容",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "29551-9",
+                        "display": "Medication prescribed Narrative"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t<table border=\"1\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>項次</td><td>處方箋種類註記</td><td>藥品代碼</td><td>藥品商品名稱</td><td>藥品學名</td><td>劑型</td><td>劑量</td><td>劑量單位</td><td>頻率</td>\n\t\t\t\t\t\t<td>給藥途徑</td><td>給藥日數</td><td>給藥總量</td><td>給藥總量單位</td><td>實際給藥總量</td><td>實際給藥總量單位</td><td>磨粉註記</td><td>註記</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>1</td><td>GENRL</td><td>A040130100</td><td>TINTEN TABLETS 500MG</td><td>ACETAMINOPHEN TAB 500MG (FOIL)</td><td>錠劑</td><td>1</td><td>錠</td><td>每天三次飯後(TID PC)</td>\n\t\t\t\t\t\t<td>口服</td><td>4</td><td>12</td><td>錠</td><td>12</td><td>錠</td><td>N</td><td>力停疼錠500公絲</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>2</td><td>GENRL</td><td>A030862157</td><td>COUGH MIXTURE </td><td>PLATYCODON FLUID EXTRACT 20ML SOD CITRATE 1G/100ML 120ML/BTL</td><td>內服液劑</td><td>10</td><td>CC</td><td>需要時使用(PRN)</td>\n\t\t\t\t\t\t<td>口服</td><td>5</td><td>1</td><td>瓶</td><td>1</td><td>瓶</td><td>N</td><td>鎮咳祛痰液</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>3</td><td>GENRL</td><td>A042687100</td><td>REGROW SUSTAINED RELEASE F.C. TABLET 60MG &quot;T.T.Y.&quot; </td><td>DEXTROMETHOPHAN HBR 60MG/TAB</td><td>持續性膜衣錠劑</td><td>1</td><td>錠</td><td>睡前使用(HS)</td>\n\t\t\t\t\t\t<td>口服</td><td>5</td><td>5</td><td>錠</td><td>5</td><td>錠</td><td>N</td><td>愛舒可羅持續性膜衣錠60公絲</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>4</td><td>GENRL</td><td>A0284531G0</td><td>MUCOSOLVAN TABLETS 30MG</td><td>AMBROXOL 30MG TAB</td><td>錠劑</td><td>1</td><td>錠</td><td>每天三次(TID)</td>\n\t\t\t\t\t\t<td>口服</td><td>5</td><td>15</td><td>錠</td><td>15</td><td>錠</td><td>N</td><td>沐舒痰錠30公絲</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>5</td><td>GENRL</td><td>B023792100</td><td>XYZAL FILM-COATED TABLETS 5MG</td><td>LEVOCETIRIZINE 5MG/TAB</td><td>膜衣錠</td><td>1</td><td>錠</td><td>每天一次(QD)</td>\n\t\t\t\t\t\t<td>口服</td><td>5</td><td>5</td><td>錠</td><td>5</td><td>錠</td><td>N</td><td>驅異樂膜衣錠5公絲</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/MedicationStatement/131476"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/MedicationStatement/134821"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/MedicationStatement/134874"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/MedicationStatement/134975"
+                },
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/MedicationStatement/134991"
+                }
+            ]
+        },
+        {
+            "title": "家族圖譜",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "74027-4",
+                        "display": "Family pedigree identifier"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>家族圖譜:</b></tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Media/130789"
+                }
+            ]
+        },
+        {
+            "title": "門診圖像",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "19005-8",
+                        "display": "Radiology Imaging study [Impression] (narrative)"
+                    }
+                ]
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>門診圖像:</b></tr>\n\t\t\t\t</table>\n\t\t\t</div>"
+            },
+            "entry": [
+                {
+                    "reference": "https://fhirtest.uhn.ca/baseR4/Media/131478"
+                }
+            ]
+        }
+    ]
+}

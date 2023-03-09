@@ -2,9 +2,9 @@ version: "3.7"
  
 services: 
   flask:
-    build: ./flasku
-    container_name: template_flask
-    image: template_flask:1.0.0
+    build: ./flaska
+    container_name: flaska
+    image: flaska:1.0.0
     restart: always
     environment:
       - APP_NAME=FlaskApp
