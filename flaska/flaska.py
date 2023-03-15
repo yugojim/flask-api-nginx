@@ -57,7 +57,7 @@ def PostFhirComposition(record):
 
 @app.route('/', methods=['GET'])
 def query_records():
-    record = json.loads(request.data)
+    #record = json.loads(request.data)
     #print(name)
     '''with open('/tmp/data.txt', 'r') as f:
         data = f.read()
@@ -65,7 +65,7 @@ def query_records():
         for record in records:
             if record['name'] == name:
                 return jsonify(record)'''
-    return jsonify(record), 200
+    return jsonify({'message': 'Hello!'}), 200
 
 @app.route('/', methods=['PUT'])
 def create_record():
@@ -117,4 +117,4 @@ def delte_record():
 
 
 if __name__ == '__main__':
-	app.run(host="0.0.0.0", port=8181, debug=False)
+	app.run(host="0.0.0.0", port=8181, debug=True)
