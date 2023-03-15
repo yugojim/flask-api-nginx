@@ -65,11 +65,13 @@ def query_records():
         for record in records:
             if record['name'] == name:
                 return jsonify(record)'''
-    return jsonify({'message': 'Hello!'}), 200
+    return jsonify({'message': 'GET'}), 200
 
-@app.route('/', methods=['PUT'])
+@app.route('/', methods=['POST'])
 def create_record():
-    record = json.loads(request.data)
+    #record = json.loads(request.data)
+    record = json.loads(request.data, strict=False)
+    Composition = PostFhirComposition(record)
     '''with open('/tmp/data.txt', 'r') as f:
         data = f.read()
     if not data:
@@ -79,15 +81,14 @@ def create_record():
         records.append(record)
     with open('/tmp/data.txt', 'w') as f:
         f.write(json.dumps(records, indent=2))'''
-    return jsonify(record), 200
+    return jsonify(Composition), 201
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['PUT'])
 def update_record():
     #dataString = request.data.decode('utf-8')
     #dataString = dataString.replace('\n','')
     #print(dataString)
-    record = json.loads(request.data, strict=False)
-    Composition = PostFhirComposition(record)
+
     '''new_records = []
     with open('/tmp/data.txt', 'r') as f:
         data = f.read()
@@ -98,11 +99,12 @@ def update_record():
         new_records.append(r)
     with open('/tmp/data.txt', 'w') as f:
         f.write(json.dumps(new_records, indent=2))'''
-    return jsonify(Composition), 201
+    return jsonify({'message': 'PUT'}), 200
+    
     
 @app.route('/', methods=['DELETE'])
 def delte_record():
-    record = json.loads(request.data)
+    #record = json.loads(request.data)
     '''new_records = []
     with open('/tmp/data.txt', 'r') as f:
         data = f.read()
@@ -113,7 +115,7 @@ def delte_record():
             new_records.append(r)
     with open('/tmp/data.txt', 'w') as f:
         f.write(json.dumps(new_records, indent=2))'''
-    return jsonify(record), 200
+    return jsonify({'message': 'DELETE'}), 200
 
 
 if __name__ == '__main__':

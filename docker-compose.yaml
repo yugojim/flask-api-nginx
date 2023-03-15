@@ -9,7 +9,7 @@ services:
     environment:
       - APP_NAME=FlaskApp
     expose:
-        - "8181:8181"
+        - 8181
     #ports:    
     
   nginx:
@@ -18,7 +18,7 @@ services:
     image: template_nginx:1.0.0
     restart: always
     ports:
-      - "80:80"
+      - "8888:8888"
       #- "443:443" 
     depends_on:
       - flask
