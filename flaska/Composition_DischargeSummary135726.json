@@ -1,307 +1,34 @@
 {
-    "resourceType": "Composition",
-    "id": "19",
-    "meta": {
-        "versionId": "1",
-        "lastUpdated": "2023-03-09T08:15:23.765+00:00",
-        "source": "#KvZSytHiGCRQznNJ"
-    },
-    "language": "zh-TW",
+    "resourceType": "",
+    "language": "",
     "text": {
-        "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\t    \n\t\t\t<table border=\"1\">\n\t\t\t\t<caption>出院病摘單</caption>\n\t\t\t\t<tr><th>身分證字號</th><th>病歷號</th><th>病人姓名</th><th>性別</th><th>出生日期</th><th>文件列印日期</th><th>醫師姓名</th><th>醫師記錄日期時間</th><th>醫院名稱</th><th>住院日期</th><th>出院日期</th><th>轉出醫事機構名稱</th><th>轉入醫事機構名稱</th></tr>\n\t\t\t\t<tr><td>Z123456789</td><td>123456</td><td>趙錢孫</td><td>男</td><td>1997-01-01</td><td>2010-08-01</td><td>賴一施 </td><td>2010-07-31</td><td>國立臺灣大學醫學院附設醫院</td><td>2010-07-01</td><td>2010-07-31</td><td>陽明大學附設醫院護理之家</td><td>國立臺灣大學醫學院附設醫院</td></tr>\n\t\t\t</table>\n\t\t</div>"
+        "status": "",
+        "div": ""
     },
-    "status": "preliminary",
+    "status": "",
     "type": {
-        "coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "18842-5",
-                "display": "Discharge Summary"
-            }
-        ]
     },
     "subject": {
-        "reference": "https://fhirtest.uhn.ca/baseR4/Patient/129257",
-        "display": "趙錢孫"
     },
     "encounter": {
-        "reference": "https://fhirtest.uhn.ca/baseR4/Encounter/129801"
     },
-    "date": "2010-08-01T11:34:00",
+    "date": "",
     "author": [
         {
-            "reference": "https://fhirtest.uhn.ca/baseR4/Practitioner/129288",
-            "display": "賴一施"
+            "reference": "",
+            "display": ""
         }
     ],
-    "title": "出院病摘",
-    "confidentiality": "N",
+    "title": "",
+    "confidentiality": "",
     "attester": [
         {
-            "mode": "professional",
-            "time": "2010-07-31"
+            "mode": "",
+            "time": ""
         }
     ],
     "custodian": {
-        "reference": "https://fhirtest.uhn.ca/baseR4/Organization/129188",
-        "display": "國立臺灣大學醫學院附設醫院"
     },
     "section": [
-        {
-            "title": "住院臆斷",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "46241-6",
-                        "display": "Hospital admission diagnosis Narrative - Reported"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>住院臆斷:</b></tr>\n\t\t\t\t\t<tr>有軌電車乘客在交通意外事故中與機動車輛碰撞時受傷之初期照護</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "出院診斷",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "11535-2",
-                        "display": "Hospital discharge Dx Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>出院診斷:</b></tr>\n\t\t\t\t\t<tr>結核病(Tuberculosis)</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            },
-            "entry": [
-                {
-                    "reference": "https://fhirtest.uhn.ca/baseR4/Condition/128907"
-                }
-            ]
-        },
-        {
-            "title": "癌症期別",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "22037-6",
-                        "display": "Staging Cancer Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>癌症期別:</b></tr>\n\t\t\t\t\t<tr>第二期</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "主訴",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "10154-3",
-                        "display": "Chief complaint Narrative - Reported"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>主訴:</b></tr>\n\t\t\t\t\t<tr>2小時前開始出現伴隨噁心的激烈心窩部疼痛。</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "病史",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "10164-2",
-                        "display": "History of Present illness Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>病史:</b></tr>\n\t\t\t\t\t<tr>病人左側胸部曾受到壓傷。</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "家族圖譜",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "74027-4",
-                        "display": "Family pedigree identifier"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>家族圖譜:</b></tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            },
-            "entry": [
-                {
-                    "reference": "https://fhirtest.uhn.ca/baseR4/Media/130209"
-                }
-            ]
-        },
-        {
-            "title": "理學檢查發現",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "10184-0",
-                        "display": "Hospital discharge physical findings Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>理學檢查發現:</b></tr>\n\t\t\t\t\t<tr>皮膚與口腔粘膜蒼白，其餘身體檢查無明顯異常。</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "檢驗及特殊檢查",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "11493-4",
-                        "display": "Hospital discharge studies summary Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>檢驗:</b></tr>\n\t\t\t\t\t<tr> 20100721　Glucose  blood　60~85mg/dL</tr>\n\t\t\t\t</table>\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>特殊檢查:</b></tr>\n\t\t\t\t\t<tr>  20100721　心電圖　心律不整</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "醫療影像檢查",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "19005-8",
-                        "display": "Radiology Imaging study [Impression] (narrative)"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>醫療影像檢查:</b></tr>\n\t\t\t\t\t<tr>X光　胸部　20100721　肺結核</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            },
-            "entry": [
-                {
-                    "reference": "https://fhirtest.uhn.ca/baseR4/Media/135675"
-                }
-            ]
-        },
-        {
-            "title": "病理報告",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "22034-3",
-                        "display": "Pathology report Cancer Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>病理報告:</b></tr>\n\t\t\t\t\t<tr>肌肉活組織切片標本的顯微鏡檢查顯示骨骼細胞的脂肪浸潤與退化性變化。</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "手術日期及方法",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "8724-7",
-                        "display": "Surgical operation note description Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>手術日期及方法:</b></tr>\n\t\t\t\t\t<tr>20100715　選擇右肋緣下1 cm（或以膽囊三角體表投影處選擇斜切口），做平行於肋弓的斜切口，切口長約4～6 cm，\n\t\t\t\t切開腹直肌前鞘，進腹腔先結紮膽囊動脈和膽囊管，後以電刀或剪刀自膽囊底部分離膽囊至膽囊管，切斷膽囊管去膽囊，將膽囊管殘端雙重結紮。</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "住院治療經過",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "8648-8",
-                        "display": "Hospital course Narrative"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>住院治療經過:</b></tr>\n\t\t\t\t\t<tr>住院後因心跳過慢(35~50/min)會診心臟科，於使用Eltroxin後改善。</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "合併症與併發症",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "55109-3",
-                        "display": "Complications Document"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>合併症與併發症:</b></tr>\n\t\t\t\t\t<tr>有發燒現象、無併發症</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "出院指示",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "8653-8",
-                        "display": "Hospital Discharge instructions"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>出院指示:</b></tr>\n\t\t\t\t\t<tr>使用退燒藥、已經康復無需復健、避免辛辣食物、定時量測與紀錄體溫、預約990831回診范依施醫師、出院不須帶藥</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        },
-        {
-            "title": "出院狀況",
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "42345-9",
-                        "display": "Discharge functional status (narrative)"
-                    }
-                ]
-            },
-            "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t<br/>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><b>出院狀況:</b></tr>\n\t\t\t\t\t<tr>治癒出院</tr>\n\t\t\t\t</table>\n\t\t\t</div>"
-            }
-        }
     ]
 }

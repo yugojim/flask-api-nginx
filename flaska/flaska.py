@@ -1,61 +1,120 @@
-from flask import Flask
-from flask_restful import reqparse, abort, Api, Resource
+import json
+from flask import Flask, request, jsonify
+from datetime import datetime
+import pathlib
 
 app = Flask(__name__)
-api = Api(app)
 
-TODOS = {
-    'todo1': {'task': 'build an API'},
-    'todo2': {'task': '?????'},
-    'todo3': {'task': 'profit!'},
-}
+def PostFhirComposition(record):
+    try:
+        CompositionjsonPath=str(pathlib.Path().absolute()) + "/Composition_DischargeSummary135726.json"
+        Compositionjson = json.load(open(CompositionjsonPath,encoding="utf-8"), strict=False)
+        
+        #PostjsonPath=str(pathlib.Path().absolute()) + "/G01526-FHIRDischargeSummary1080422.json"
+        #Postjson = json.load(open(PostjsonPath,encoding="utf-8"), strict=False)
+        Postjson = record
+        
+        Compositionjson['resourceType'] = 'Composition'
+        Compositionjson['language'] = 'zh-TW'
+        Compositionjson['text']['status'] = 'generated'
+        Compositionjson['text']['div'] = '<div xmlns=\"http://www.w3.org/1999/xhtml\">' + 'text' + '</div>'         
+        Compositionjson['status'] = 'preliminary'
+        Compositionjson['type'] = {"coding":[{"system":"http://loinc.org","code":"18842-5","display":"Discharge Summary"}]}
+        
+        datetime_object = datetime.strptime(Postjson[0]['CREATE_DATE']+Postjson[0]['CREATE_TIME'], '%Y%m%d%H%M')
+        Compositionjson['date']=datetime_object.strftime("%Y-%m-%dT%H:%M:00")
+        
+        Compositionjson['subject']['reference'] = 'Patient/' + Postjson[0]['PAT_NO']
+        Compositionjson['subject']['display'] = Postjson[0]['NAME']
+        
+        Compositionjson['encounter']['display'] = Postjson[0]['BED_NO']
+        
+        #Compositionjson['author'][0]['reference'] = 'Practitioner/' + PractitionerPut(xmldict['author']['assignedAuthor'])
+        #Compositionjson['author'][0]['display'] = xmldict['author']['assignedAuthor']['assignedPerson']['name']
+        Compositionjson['title'] = '出院病摘'
+        Compositionjson['confidentiality'] = 'N'
+        Compositionjson['attester'][0]['mode'] = 'professional'
+        #date_object = datetime.strptime(xmldict['author']['time']['@value'], '%Y%m%d%H%M')
+        #Compositionjson['attester'][0]['time'] = date_object.strftime("%Y-%m-%dT%H:%M:00")
+        
+        Compositionjson['custodian']['reference'] = 'Organization/' + Postjson[0]['Hospital_Id']
+        Compositionjson['custodian']['display'] = Postjson[0]['Hospital_Name']
+        
+        Compositionjson['section']=[]
+        #for i in range(len(xmldict['component']['structuredBody']['component'])):
+        #    Compositionjson['section'].append(component2section(xmldict['component']['structuredBody']['component'][i]))
+       # print(Compositionjson['section'][7])
+        #url = fhir + 'Composition/'
+        headers = {
+          'Content-Type': 'application/json'
+        }
+        payload = json.dumps(Compositionjson)
+        #response = requests.request("POST", url, headers=headers, data=payload)
+        #print(response.status_code)
+        return (Compositionjson)
+    except:
+        return ({'NG'})
 
+@app.route('/', methods=['GET'])
+def query_records():
+    record = json.loads(request.data)
+    #print(name)
+    '''with open('/tmp/data.txt', 'r') as f:
+        data = f.read()
+        records = json.loads(data)
+        for record in records:
+            if record['name'] == name:
+                return jsonify(record)'''
+    return jsonify(record), 200
 
-def abort_if_todo_doesnt_exist(todo_id):
-    if todo_id not in TODOS:
-        abort(404, message="Todo {} doesn't exist".format(todo_id))
+@app.route('/', methods=['PUT'])
+def create_record():
+    record = json.loads(request.data)
+    '''with open('/tmp/data.txt', 'r') as f:
+        data = f.read()
+    if not data:
+        records = [record]
+    else:
+        records = json.loads(data)
+        records.append(record)
+    with open('/tmp/data.txt', 'w') as f:
+        f.write(json.dumps(records, indent=2))'''
+    return jsonify(record), 200
 
-parser = reqparse.RequestParser()
-parser.add_argument('task')
+@app.route('/', methods=['POST'])
+def update_record():
+    #dataString = request.data.decode('utf-8')
+    #dataString = dataString.replace('\n','')
+    #print(dataString)
+    record = json.loads(request.data, strict=False)
+    Composition = PostFhirComposition(record)
+    '''new_records = []
+    with open('/tmp/data.txt', 'r') as f:
+        data = f.read()
+        records = json.loads(data)
+    for r in records:
+        if r['name'] == record['name']:
+            r['email'] = record['email']
+        new_records.append(r)
+    with open('/tmp/data.txt', 'w') as f:
+        f.write(json.dumps(new_records, indent=2))'''
+    return jsonify(Composition), 201
+    
+@app.route('/', methods=['DELETE'])
+def delte_record():
+    record = json.loads(request.data)
+    '''new_records = []
+    with open('/tmp/data.txt', 'r') as f:
+        data = f.read()
+        records = json.loads(data)
+        for r in records:
+            if r['name'] == record['name']:
+                continue
+            new_records.append(r)
+    with open('/tmp/data.txt', 'w') as f:
+        f.write(json.dumps(new_records, indent=2))'''
+    return jsonify(record), 200
 
-
-# Todo
-# shows a single todo item and lets you delete a todo item
-class Todo(Resource):
-    def get(self, todo_id):
-        abort_if_todo_doesnt_exist(todo_id)
-        return TODOS[todo_id]
-
-    def delete(self, todo_id):
-        abort_if_todo_doesnt_exist(todo_id)
-        del TODOS[todo_id]
-        return '', 204
-
-    def put(self, todo_id):
-        args = parser.parse_args()
-        task = {'task': args['task']}
-        TODOS[todo_id] = task
-        return task, 201
-
-
-# TodoList
-# shows a list of all todos, and lets you POST to add new tasks
-class TodoList(Resource):
-    def get(self):
-        return TODOS
-
-    def post(self):
-        args = parser.parse_args()
-        todo_id = int(max(TODOS.keys()).lstrip('todo')) + 1
-        todo_id = 'todo%i' % todo_id
-        TODOS[todo_id] = {'task': args['task']}
-        return TODOS[todo_id], 201
-
-##
-## Actually setup the Api resource routing here
-##
-api.add_resource(TodoList, '/todos')
-api.add_resource(Todo, '/todos/<todo_id>')
 
 if __name__ == '__main__':
-	app.run(host="0.0.0.0", port=8080, debug=True)
+	app.run(host="0.0.0.0", port=8081, debug=True)
