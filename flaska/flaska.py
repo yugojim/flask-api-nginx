@@ -2,6 +2,11 @@ import json
 from flask import Flask, request, jsonify
 from datetime import datetime
 import pathlib
+import requests
+
+#fhir = 'http://104.208.68.39:8080/fhir/'#4600VM
+#fhir = "http://61.67.8.220:8080/fhir/"#skh
+fhir = "http://106.105.181.72:8080/fhir/"#tpech
 
 app = Flask(__name__)
 
@@ -329,14 +334,15 @@ def PostFhirComposition(record):
         }
         Compositionjson['section'].append(DISCHARGE_STATUS_CONTENTS)
         
-        #url = fhir + 'Composition/'
+        url = fhir + 'Composition/'
         headers = {
           'Content-Type': 'application/json'
         }
         payload = json.dumps(Compositionjson)
-        #response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("POST", url, headers=headers, data=payload)
+        resultjson=json.loads(response.text)
         #print(response.status_code)
-        return (Compositionjson)
+        return (resultjson)
     except:
         return ({'NG'})
 
