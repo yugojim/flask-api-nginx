@@ -6,8 +6,8 @@ import Function
 
 #fhir = 'http://104.208.68.39:8080/fhir/'#4600VM outside
 #fhir = "http://61.67.8.220:8080/fhir/"#skh outside
-#fhir = "http://10.200.251.72:8080/fhir/"#tpech inside
-fhir = "http://106.105.181.72:8080/fhir/"#tpech outside
+fhir = "http://10.200.251.72:8080/fhir/"#tpech inside
+#fhir = "http://106.105.181.72:8080/fhir/"#tpech outside
 
 
 app = Flask(__name__)
